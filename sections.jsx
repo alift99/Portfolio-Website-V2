@@ -145,8 +145,8 @@ function Skills() {
 }
 
 const SOCIALS = [
-  { label: "GitHub ↗", href: "#" },
-  { label: "LinkedIn ↗", href: "#" },
+  { label: "GitHub ↗", href: "https://github.com/alift99" },
+  { label: "LinkedIn ↗", href: "https://www.linkedin.com/in/alifdaffa" },
   { label: "Google Scholar ↗", href: "#" },
   { label: "Résumé (PDF) ↓", href: "#" },
 ];
@@ -160,8 +160,8 @@ function Contact() {
         </span>
         <h2 className="contact-big reveal">Let's build<br />something.</h2>
         <div className="reveal">
-          <a className="contact-mail" href="mailto:hello@alifdaffa.dev">
-            <span aria-hidden="true">✦</span> hello@alifdaffa.dev
+          <a className="contact-mail" href="mailto:alifdaffa.main@gmail.com">
+            <span aria-hidden="true">✦</span> alifdaffa.main@gmail.com
           </a>
         </div>
         <div className="socials reveal">

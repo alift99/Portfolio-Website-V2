@@ -3,12 +3,13 @@
 const { useState, useRef, useEffect, useCallback } = React;
 
 function Placeholder({ slide }) {
+  const icon = slide.kind === "gif" ? <span className="gif">◉ GIF</span>
+             : slide.kind === "youtube" ? "▶ VID"
+             : slide.kind === "video" ? "▶ MP4"
+             : "▣ IMG";
   return (
     <div className="ph">
-      <span className="ph-tag">
-        {slide.kind === "gif" ? <span className="gif">◉ GIF</span> : "▣ IMG"}
-        &nbsp;· {slide.label}
-      </span>
+      <span className="ph-tag">{icon}&nbsp;· {slide.label}</span>
     </div>
   );
 }
@@ -32,7 +33,16 @@ function Carousel({ images, motion }) {
       >
         {images.map((s, idx) => (
           <div className="slide" key={idx} aria-hidden={idx !== i}>
-            {s.src
+            {s.kind === "youtube" && s.src
+              ? <iframe
+                  src={s.src}
+                  title={s.label}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              : s.kind === "video" && s.src
+              ? <video src={s.src} controls preload="metadata" />
+              : s.src
               ? <img src={s.src} alt={s.label} loading="lazy" />
               : <Placeholder slide={s} />}
           </div>
@@ -67,7 +77,7 @@ function ProjectCard({ p, motion }) {
       <div className="card-body">
         <div className="card-top">
           <div>
-            <div className="card-cat">{p.category}</div>
+            <div className="card-cat">{p.categories.join(" · ")}</div>
             <h3 className="card-title">{p.title}</h3>
           </div>
           <div className="card-year">{p.year}</div>
@@ -93,9 +103,9 @@ function ProjectCard({ p, motion }) {
 function Projects({ motion }) {
   const [filter, setFilter] = useState("All");
   const counts = {};
-  PROJECTS.forEach((p) => { counts[p.category] = (counts[p.category] || 0) + 1; });
+  PROJECTS.forEach((p) => p.categories.forEach((c) => { counts[c] = (counts[c] || 0) + 1; }));
 
-  const filtered = filter === "All" ? PROJECTS : PROJECTS.filter((p) => p.category === filter);
+  const filtered = filter === "All" ? PROJECTS : PROJECTS.filter((p) => p.categories.includes(filter));
 
   return (
     <section className="section" id="projects">

@@ -333,6 +333,8 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 }
 .ph .ph-tag .gif { color: var(--accent-text); }
 .slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.slide iframe { width: 100%; height: 100%; border: none; display: block; }
+.slide video { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .car-btn {
   position: absolute; top: 50%; transform: translateY(-50%);
