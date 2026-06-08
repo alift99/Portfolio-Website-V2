@@ -2,6 +2,55 @@
 
 const { useState, useRef, useEffect, useCallback } = React;
 
+function Lightbox({ images, startIndex, onClose }) {
+  const [i, setI] = useState(startIndex);
+  const n = images.length;
+  const slide = images[i];
+  const go = useCallback((next) => setI((cur) => (next + n) % n), [n]);
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft") go(i - 1);
+      if (e.key === "ArrowRight") go(i + 1);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [onClose, go, i]);
+
+  return ReactDOM.createPortal(
+    <div className="lb-backdrop" onClick={onClose} aria-modal="true" role="dialog" aria-label="Media lightbox">
+      <div className="lb-box" onClick={(e) => e.stopPropagation()}>
+        <button className="lb-close" onClick={onClose} aria-label="Close lightbox">✕</button>
+        {slide.kind === "youtube" && slide.src
+          ? <div className="lb-iframe-wrap">
+              <iframe
+                src={slide.src}
+                title={slide.label}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="lb-iframe"
+              />
+            </div>
+          : slide.kind === "video" && slide.src
+          ? <video key={slide.src} src={slide.src} controls autoPlay className="lb-video" />
+          : slide.src
+          ? <img src={slide.src} alt={slide.label} className="lb-img" />
+          : null}
+        {slide.label && <div className="lb-label">{slide.label}</div>}
+        {n > 1 && (
+          <>
+            <button className="lb-nav lb-prev" onClick={() => go(i - 1)} aria-label="Previous">‹</button>
+            <button className="lb-nav lb-next" onClick={() => go(i + 1)} aria-label="Next">›</button>
+            <div className="lb-count">{i + 1} / {n}</div>
+          </>
+        )}
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 function Placeholder({ slide }) {
   const icon = slide.kind === "gif" ? <span className="gif">◉ GIF</span>
              : slide.kind === "youtube" ? "▶ VID"
@@ -16,6 +65,7 @@ function Placeholder({ slide }) {
 
 function Carousel({ images, motion }) {
   const [i, setI] = useState(0);
+  const [lightbox, setLightbox] = useState(null);
   const n = images.length;
   const go = useCallback((next) => setI((cur) => (next + n) % n), [n]);
 
@@ -26,6 +76,7 @@ function Carousel({ images, motion }) {
   };
 
   return (
+    <>
     <div className="carousel" tabIndex={0} onKeyDown={onKey} aria-roledescription="carousel">
       <div
         className="carousel-track"
@@ -45,6 +96,13 @@ function Carousel({ images, motion }) {
               : s.src
               ? <img src={s.src} alt={s.label} loading="lazy" />
               : <Placeholder slide={s} />}
+            {s.src && (
+              <button
+                className="slide-expand"
+                aria-label="Expand media"
+                onClick={() => setLightbox(idx)}
+              >⤢</button>
+            )}
           </div>
         ))}
       </div>
@@ -67,6 +125,8 @@ function Carousel({ images, motion }) {
         </>
       )}
     </div>
+    {lightbox !== null && <Lightbox images={images} startIndex={lightbox} onClose={() => setLightbox(null)} />}
+    </>
   );
 }
 
