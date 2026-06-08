@@ -87,9 +87,10 @@ function App() {
         <Hero variant={t.heroVariant} motion={t.motion} />
         <Marquee />
         <About />
-        <Projects motion={t.motion} />
         <Experience />
+        <Projects motion={t.motion} />
         <Skills />
+        <Achievements />
         <Contact />
         <Footer />
       </div>

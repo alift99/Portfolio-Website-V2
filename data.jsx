@@ -233,4 +233,105 @@ const SKILLS = [
 
 const TOOLS = ["PyTorch", "TensorFlow", "ROS", "React", "FastAPI", "OpenCV", "Unity", "Docker", "GCP", "AWS", "scikit-learn", "Pandas"];
 
-Object.assign(window, { CATEGORIES, PROJECTS, EXPERIENCE, SKILLS, TOOLS });
+const ACHIEVEMENTS = [
+  {
+    kind: "award",
+    title: "Anthropic x AI Tinkerers TextArena Agent Hackathon",
+    detail: "2nd Runner Up",
+    org: "Anthropic x AI Tinkerers",
+    year: "2024",
+  },
+  {
+    kind: "award",
+    title: "Google AI Trailblazer",
+    detail: "Transformation Award",
+    org: "Google",
+    year: "2024",
+  },
+  {
+    kind: "award",
+    title: "HashTech Data Analytics & Cybersecurity Competition",
+    detail: "Overall Champion",
+    org: "HashTech",
+    year: "2022",
+  },
+  {
+    kind: "award",
+    title: "AWS DeepRacer Dash",
+    detail: "3rd Runner Up",
+    org: "AWS",
+    year: "2023",
+  },
+  {
+    kind: "scholarship",
+    title: "MTFA Founder's Scholarship",
+    detail: "Recipient",
+    org: "MTFA",
+    year: "2023",
+  },
+  {
+    kind: "publication",
+    title: "IEEE ICDM 2023 Workshop",
+    detail: "Co-authored paper on self-supervised federated learning",
+    org: "IEEE",
+    year: "2023",
+  },
+  {
+    kind: "publication",
+    title: "ICCE 2023 Workshop",
+    detail: "First-author publication",
+    org: "IEEE",
+    year: "2023",
+  },
+  {
+    kind: "publication",
+    title: "IEEE SSRR 2022",
+    detail: "Co-authored paper on human-robot teaming simulation",
+    org: "IEEE",
+    year: "2022",
+  },
+  {
+    kind: "certification",
+    title: "Google Professional Machine Learning Engineer",
+    detail: "Professional Certification",
+    org: "Google Cloud",
+    year: "",
+  },
+  {
+    kind: "certification",
+    title: "Google Cloud Big Data and Machine Learning Fundamentals",
+    detail: "Professional Certification",
+    org: "Google Cloud",
+    year: "",
+  },
+  {
+    kind: "certification",
+    title: "Google Data Analytics Professional Certification",
+    detail: "Professional Certification",
+    org: "Google",
+    year: "",
+  },
+  {
+    kind: "certification",
+    title: "ETL and Data Pipelines with Shell, Airflow & Kafka",
+    detail: "Certification",
+    org: "IBM / Coursera",
+    year: "",
+  },
+  {
+    kind: "certification",
+    title: "AI for Industry® — Foundations in AI",
+    detail: "Certification",
+    org: "AI Singapore",
+    year: "",
+  },
+  {
+    kind: "certification",
+    title: "Unity Certified Associate Game Developer",
+    detail: "Certification",
+    org: "Unity Technologies",
+    year: "",
+  },
+];
+
+Object.assign(window, { CATEGORIES, PROJECTS, EXPERIENCE, SKILLS, TOOLS, ACHIEVEMENTS });

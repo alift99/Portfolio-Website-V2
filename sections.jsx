@@ -18,9 +18,10 @@ function Nav() {
         </a>
         <div className="nav-links">
           <a href="#about">about</a>
-          <a href="#projects">work</a>
           <a href="#experience">experience</a>
+          <a href="#projects">work</a>
           <a href="#skills">skills</a>
+          <a href="#achievements">achievements</a>
           <a className="nav-cta" href="#contact">contact ↗</a>
         </div>
       </div>
@@ -93,7 +94,7 @@ function Experience() {
     <section className="section" id="experience">
       <div className="wrap">
         <div className="section-head reveal">
-          <div className="section-no">03 — Experience</div>
+          <div className="section-no">02 — Experience</div>
           <h2 className="section-title">Where I've worked.</h2>
         </div>
         <div className="xp-list">
@@ -156,7 +157,7 @@ function Contact() {
     <section className="section contact" id="contact">
       <div className="wrap">
         <span className="eyebrow no-rule reveal" style={{ justifyContent: "center", display: "flex" }}>
-          05 — Contact
+          06 — Contact
         </span>
         <h2 className="contact-big reveal">Let's build<br />something.</h2>
         <div className="reveal">
@@ -186,4 +187,46 @@ function Footer() {
   );
 }
 
-Object.assign(window, { Nav, Marquee, About, Experience, Skills, Contact, Footer });
+const ACHIEVEMENT_KIND_LABEL = {
+  award: "Award",
+  scholarship: "Scholarship",
+  publication: "Publication",
+  certification: "Certification",
+};
+
+function Achievements() {
+  const kinds = ["award", "scholarship", "publication", "certification"];
+  return (
+    <section className="section" id="achievements">
+      <div className="wrap">
+        <div className="section-head reveal">
+          <div className="section-no">05 — Recognition</div>
+          <h2 className="section-title">Awards & credentials.</h2>
+        </div>
+        {kinds.map((kind) => {
+          const items = ACHIEVEMENTS.filter((a) => a.kind === kind);
+          if (!items.length) return null;
+          return (
+            <div className="ach-group reveal" key={kind}>
+              <div className="ach-group-label">{ACHIEVEMENT_KIND_LABEL[kind]}s</div>
+              <div className="ach-list">
+                {items.map((a) => (
+                  <div className="ach-item reveal" key={a.title}>
+                    <div className="ach-meta">
+                      {a.org && <span className="ach-org">{a.org}</span>}
+                      {a.year && <span className="ach-year">{a.year}</span>}
+                    </div>
+                    <div className="ach-title">{a.title}</div>
+                    <div className="ach-detail">{a.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+Object.assign(window, { Nav, Marquee, About, Experience, Skills, Achievements, Contact, Footer });

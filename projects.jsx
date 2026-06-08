@@ -111,7 +111,7 @@ function Projects({ motion }) {
     <section className="section" id="projects">
       <div className="wrap">
         <div className="section-head reveal">
-          <div className="section-no">02 — Selected work</div>
+          <div className="section-no">03 — Selected work</div>
           <span className="eyebrow" style={{ marginTop: 14 }}>Filter by discipline</span>
           <h2 className="section-title">Things I've built &amp; researched.</h2>
         </div>
