@@ -34,7 +34,6 @@ function HeroEditorial({ motion }) {
   return (
     <div className="hero-grid">
       <div className="reveal in">
-        <StatusPill motion={motion} />
         <h1 className="hero-name">{NAME}</h1>
         <div className="hero-role">
           <b>{ROLE}</b> · research-driven · resourceful by default
