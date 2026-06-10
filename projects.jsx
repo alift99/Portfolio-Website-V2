@@ -103,6 +103,13 @@ function Carousel({ images, motion }) {
                 onClick={() => setLightbox(idx)}
               >⤢</button>
             )}
+            {s.src && s.kind !== "youtube" && (
+              <div
+                className="slide-click-expand"
+                onClick={() => setLightbox(idx)}
+                aria-hidden="true"
+              />
+            )}
           </div>
         ))}
       </div>

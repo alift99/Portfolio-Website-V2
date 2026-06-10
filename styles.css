@@ -376,6 +376,9 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .slide-expand:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 .carousel:hover .slide-expand { opacity: 1; }
 .slide-expand:focus-visible { opacity: 1; outline: 2px solid var(--accent); }
+.slide-click-expand {
+  position: absolute; inset: 0; z-index: 3; cursor: zoom-in;
+}
 
 /* lightbox */
 .lb-backdrop {
