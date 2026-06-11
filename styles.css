@@ -149,7 +149,71 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
   border-radius: 9px; color: var(--ink) !important;
 }
 .nav-cta:hover { border-color: var(--accent-line); background: var(--accent-soft) !important; }
-@media (max-width: 760px) { .nav-links a:not(.nav-cta) { display: none; } }
+/* hamburger button */
+.nav-burger {
+  display: none;
+  flex-direction: column; justify-content: center; align-items: center;
+  gap: 5px; width: 38px; height: 38px;
+  background: none; border: none; cursor: pointer; padding: 6px;
+  border-radius: var(--r-sm);
+  transition: background 0.2s;
+}
+.nav-burger:hover { background: var(--surface); }
+.nav-burger span {
+  display: block; width: 20px; height: 1.5px;
+  background: var(--ink-2);
+  border-radius: 2px;
+  transition: transform 0.25s var(--ease), opacity 0.2s;
+  transform-origin: center;
+}
+[data-menu-open="true"] .nav-burger span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+[data-menu-open="true"] .nav-burger span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+[data-menu-open="true"] .nav-burger span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* slide-down drawer */
+.nav-drawer {
+  position: fixed; inset: 0; z-index: 39;
+}
+.nav-drawer-backdrop {
+  position: absolute; inset: 0;
+  background: oklch(0 0 0 / 0.4);
+  backdrop-filter: blur(4px);
+  animation: fd-in 0.2s var(--ease) both;
+}
+.nav-drawer-panel {
+  position: absolute; top: 0; left: 0; right: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line-strong);
+  padding: 72px var(--gutter) 28px;
+  display: flex; flex-direction: column; gap: 4px;
+  animation: slide-down 0.28s var(--ease) both;
+  box-shadow: 0 24px 48px -12px oklch(0 0 0 / 0.35);
+}
+.nav-drawer-panel a {
+  font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.04em;
+  color: var(--ink-2); padding: 11px 14px; border-radius: var(--r-sm);
+  transition: color 0.15s, background 0.15s;
+}
+.nav-drawer-panel a:hover { color: var(--ink); background: var(--surface); }
+.nav-drawer-cta {
+  margin-top: 8px;
+  border: 1px solid var(--line-strong) !important;
+  color: var(--ink) !important; text-align: center;
+}
+
+@keyframes slide-down {
+  from { transform: translateY(-12px); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+@keyframes fd-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@media (max-width: 760px) {
+  .nav-links { display: none; }
+  .nav-burger { display: flex; }
+}
 
 /* ---------- buttons ---------- */
 .btn {

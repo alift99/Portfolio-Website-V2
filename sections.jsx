@@ -2,29 +2,64 @@
 
 const { useState: useStateS, useEffect: useEffectS, useRef: useRefS } = React;
 
+const NAV_LINKS = [
+  { href: "#about", label: "about" },
+  { href: "#experience", label: "experience" },
+  { href: "#projects", label: "work" },
+  { href: "#skills", label: "skills" },
+  { href: "#achievements", label: "achievements" },
+];
+
 function Nav() {
   const [stuck, setStuck] = useStateS(false);
+  const [open, setOpen] = useStateS(false);
+
   useEffectS(() => {
     const onScroll = () => setStuck(window.scrollY > 12);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffectS(() => {
+    if (!open) return;
+    const onKey = (e) => { if (e.key === "Escape") setOpen(false); };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  const close = () => setOpen(false);
+
   return (
-    <nav className="nav" data-stuck={stuck}>
+    <nav className="nav" data-stuck={stuck} data-menu-open={open}>
       <div className="nav-inner">
-        <a className="brand" href="#top">
+        <a className="brand" href="#top" onClick={close}>
           <span className="brand-mark">A</span>
           <span><b>Alif Daffa'</b> <span>/ AI Engineer</span></span>
         </a>
         <div className="nav-links">
-          <a href="#about">about</a>
-          <a href="#experience">experience</a>
-          <a href="#projects">work</a>
-          <a href="#skills">skills</a>
-          <a href="#achievements">achievements</a>
+          {NAV_LINKS.map((l) => <a href={l.href} key={l.href}>{l.label}</a>)}
           <a className="nav-cta" href="#contact">contact ↗</a>
         </div>
+        <button
+          className="nav-burger"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span></span><span></span><span></span>
+        </button>
       </div>
+      {open && (
+        <div className="nav-drawer" role="dialog" aria-label="Navigation menu">
+          <div className="nav-drawer-backdrop" onClick={close} />
+          <div className="nav-drawer-panel">
+            {NAV_LINKS.map((l) => (
+              <a href={l.href} key={l.href} onClick={close}>{l.label}</a>
+            ))}
+            <a className="nav-cta nav-drawer-cta" href="#contact" onClick={close}>contact ↗</a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
