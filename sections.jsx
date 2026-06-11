@@ -33,8 +33,8 @@ function Nav() {
     <nav className="nav" data-stuck={stuck} data-menu-open={open}>
       <div className="nav-inner">
         <a className="brand" href="#top" onClick={close}>
-          <span className="brand-mark">A</span>
-          <span><b>Alif Daffa'</b> <span>/ AI Engineer</span></span>
+          <img className="brand-mark" src="images/profile_pic.webp" alt="Alif Daffa'" />
+          <span><b>Alif Daffa'</b></span>
         </a>
         <div className="nav-links">
           {NAV_LINKS.map((l) => <a href={l.href} key={l.href}>{l.label}</a>)}
