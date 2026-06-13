@@ -57,6 +57,7 @@ function Nav() {
               <a href={l.href} key={l.href} onClick={close}>{l.label}</a>
             ))}
             <a className="nav-cta nav-drawer-cta" href="#contact" onClick={close}>contact ↗</a>
+            <button className="nav-drawer-close" onClick={close} aria-label="Close menu">&#x25B2;</button>
           </div>
         </div>
       )}
