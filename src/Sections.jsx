@@ -1,6 +1,5 @@
-/* sections.jsx — Nav, About, Experience, Skills, Contact, Footer, Marquee */
-
-const { useState: useStateS, useEffect: useEffectS, useRef: useRefS } = React;
+import { useState, useEffect } from 'react';
+import { TOOLS, EXPERIENCE, SKILLS, ACHIEVEMENTS } from './data.js';
 
 const NAV_LINKS = [
   { href: "#about", label: "about" },
@@ -10,17 +9,17 @@ const NAV_LINKS = [
   { href: "#achievements", label: "achievements" },
 ];
 
-function Nav() {
-  const [stuck, setStuck] = useStateS(false);
-  const [open, setOpen] = useStateS(false);
+export function Nav() {
+  const [stuck, setStuck] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  useEffectS(() => {
+  useEffect(() => {
     const onScroll = () => setStuck(window.scrollY > 12);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffectS(() => {
+  useEffect(() => {
     if (!open) return;
     const onKey = (e) => { if (e.key === "Escape") setOpen(false); };
     document.addEventListener("keydown", onKey);
@@ -65,7 +64,7 @@ function Nav() {
   );
 }
 
-function Marquee() {
+export function Marquee() {
   const items = [...TOOLS, ...TOOLS];
   return (
     <div className="marquee" aria-hidden="true">
@@ -76,7 +75,7 @@ function Marquee() {
   );
 }
 
-function About() {
+export function About() {
   const facts = [
     { k: "Based in", v: <b>Remote · GMT+7</b> },
     { k: "Focus", v: "CV · GenAI · Data Science" },
@@ -125,7 +124,7 @@ function About() {
   );
 }
 
-function Experience() {
+export function Experience() {
   return (
     <section className="section" id="experience">
       <div className="wrap">
@@ -155,7 +154,7 @@ function Experience() {
   );
 }
 
-function Skills() {
+export function Skills() {
   return (
     <section className="section" id="skills">
       <div className="wrap">
@@ -188,7 +187,7 @@ const SOCIALS = [
   { label: "Résumé (PDF) ↓", href: "#" },
 ];
 
-function Contact() {
+export function Contact() {
   return (
     <section className="section contact" id="contact">
       <div className="wrap">
@@ -211,7 +210,7 @@ function Contact() {
   );
 }
 
-function Footer() {
+export function Footer() {
   const toTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
   return (
     <footer className="footer">
@@ -230,7 +229,7 @@ const ACHIEVEMENT_KIND_LABEL = {
   certification: "Certification",
 };
 
-function Achievements() {
+export function Achievements() {
   const kinds = ["award", "scholarship", "publication", "certification"];
   return (
     <section className="section" id="achievements">
@@ -264,5 +263,3 @@ function Achievements() {
     </section>
   );
 }
-
-Object.assign(window, { Nav, Marquee, About, Experience, Skills, Achievements, Contact, Footer });

@@ -1,14 +1,6 @@
-/* data.jsx — portfolio content. Swap placeholders / images here. */
+export const CATEGORIES = ["Computer Vision", "Natural Language Processing", "Data Science", "Full-stack", "Generative AI", "Robotics", "Misc"];
 
-// Project categories used for filtering
-const CATEGORIES = ["Computer Vision", "Natural Language Processing", "Data Science", "Full-stack", "Generative AI", "Robotics", "Misc"];
-
-// Each project: images is an array of slides.
-// To use a real image/gif: { src: "images/foo.gif", kind: "gif", label: "Live demo" }
-// To embed a YouTube video: { src: "https://www.youtube.com/embed/VIDEO_ID", kind: "youtube", label: "Demo" }
-// To embed a local video: { src: "images/foo.mp4", kind: "video", label: "Demo" }
-// Leave src null to render a labeled placeholder.
-const PROJECTS = [
+export const PROJECTS = [
   {
     id: "litgraph",
     title: "LitGraph",
@@ -169,7 +161,7 @@ const PROJECTS = [
   },
 ];
 
-const EXPERIENCE = [
+export const EXPERIENCE = [
   {
     when: "Jul 2024 — Present",
     now: true,
@@ -208,7 +200,7 @@ const EXPERIENCE = [
   },
 ];
 
-const SKILLS = [
+export const SKILLS = [
   {
     title: "Programming Languages",
     note: "Core languages across ML, backend, and systems.",
@@ -231,9 +223,9 @@ const SKILLS = [
   },
 ];
 
-const TOOLS = ["PyTorch", "TensorFlow", "ROS", "React", "FastAPI", "OpenCV", "Unity", "Docker", "GCP", "AWS", "scikit-learn", "Pandas"];
+export const TOOLS = ["PyTorch", "TensorFlow", "ROS", "React", "FastAPI", "OpenCV", "Unity", "Docker", "GCP", "AWS", "scikit-learn", "Pandas"];
 
-const ACHIEVEMENTS = [
+export const ACHIEVEMENTS = [
   {
     kind: "award",
     title: "Anthropic x AI Tinkerers TextArena Agent Hackathon",
@@ -333,5 +325,3 @@ const ACHIEVEMENTS = [
     year: "",
   },
 ];
-
-Object.assign(window, { CATEGORIES, PROJECTS, EXPERIENCE, SKILLS, TOOLS, ACHIEVEMENTS });
