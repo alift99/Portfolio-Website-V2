@@ -1,9 +1,10 @@
-/* app.jsx — root: scroll-reveal, render */
-
-const { useEffect: useAppEffect } = React;
+import { useEffect } from 'react';
+import { Hero } from './Hero.jsx';
+import { Projects } from './Projects.jsx';
+import { Nav, Marquee, About, Experience, Skills, Achievements, Contact, Footer } from './Sections.jsx';
 
 function useScrollReveal() {
-  useAppEffect(() => {
+  useEffect(() => {
     const els = document.querySelectorAll(".reveal:not(.in)");
     if (!("IntersectionObserver" in window) || els.length === 0) {
       els.forEach((e) => e.classList.add("in"));
@@ -25,7 +26,7 @@ function useScrollReveal() {
   }, []);
 }
 
-function App() {
+export default function App() {
   useScrollReveal();
 
   return (
@@ -46,5 +47,3 @@ function App() {
     </>
   );
 }
-
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);

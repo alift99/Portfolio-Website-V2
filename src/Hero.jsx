@@ -1,7 +1,11 @@
-/* hero.jsx — hero section */
-
 const NAME = "Alif Daffa' Yusof";
 const ROLE = "AI Engineer";
+
+const HERO_METRICS = [
+  { b: "6+", s: "Years building" },
+  { b: "20+", s: "Models shipped" },
+  { b: "4", s: "Research papers" },
+];
 
 function HeroActions() {
   return (
@@ -15,13 +19,7 @@ function HeroActions() {
   );
 }
 
-const HERO_METRICS = [
-  { b: "6+", s: "Years building" },
-  { b: "20+", s: "Models shipped" },
-  { b: "4", s: "Research papers" },
-];
-
-function Hero() {
+export function Hero() {
   return (
     <header className="hero section v-editorial" id="top">
       <div className="wrap">
@@ -54,5 +52,3 @@ function Hero() {
     </header>
   );
 }
-
-window.Hero = Hero;
