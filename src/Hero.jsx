@@ -27,15 +27,15 @@ export function Hero() {
           <div className="reveal in">
             <h1 className="hero-name">{NAME}</h1>
             <div className="hero-role">
-              <b>{ROLE}</b> · research-driven · resourceful by default
+              <b>{ROLE}</b> · methodical by training · resourceful by nature
             </div>
           </div>
           <div className="hero-foot">
             <div className="reveal in">
               <p className="hero-lede">
-                I build <b>intelligent systems that ship</b> — from computer-vision
-                pipelines and generative-AI products to the data platforms that keep
-                them honest. Equal parts researcher and engineer.
+                I build <b>intelligent systems that ship</b> — from computer-vision 
+                pipelines to generative-AI products that hold up in production. 
+                Equal parts researcher and engineer.
               </p>
               <div style={{ marginTop: 26 }}><HeroActions /></div>
             </div>

@@ -77,10 +77,10 @@ export function Marquee() {
 
 export function About() {
   const facts = [
-    { k: "Based in", v: <b>Remote · GMT+7</b> },
-    { k: "Focus", v: "CV · GenAI · Data Science" },
-    { k: "Currently", v: "Agentic retrieval systems" },
-    { k: "Off-screen", v: "Climbing & film photography" },
+    { k: "Based in", v: <b>Singapore · Remote</b> },
+    { k: "Focus", v: "Full stack · GenAI · Data Science" },
+    { k: "Currently", v: "Cloud Architecture" },
+    { k: "Off-screen", v: "Competitive Powerlifting / Streetlifting" }
   ];
   return (
     <section className="section" id="about">
@@ -91,22 +91,24 @@ export function About() {
         <div className="about-grid">
           <div className="reveal">
             <p className="about-lede">
-              I'm an AI engineer who lives in the space between <span className="hl">research
-              and production</span> — happiest when a paper-shaped idea becomes
-              something real people can use.
+              I'm an AI engineer who works across the full ML pipeline — from <span className="hl">data analysis 
+              and modeling through to deployment</span> — happiest when I'm shipping something 
+              real people use.
             </p>
             <div className="about-body">
               <p>
-                My background is research-heavy: years spent reading, reproducing,
-                and pushing on the literature in computer vision and representation
-                learning. But I'm an engineer at heart — I'd rather ship a model
-                that works than write about one that might.
+                Two things define how I work: comfort with ambiguity, and resourcefulness 
+                in problem solving. I don't need a problem fully scoped to start making 
+                progress on it. And once I'm in it, years of working independently have 
+                made me good at finding a path forward on my own — figuring out what to 
+                try, what to drop, and where to spend the effort.
               </p>
               <p>
-                That mix makes me resourceful. Give me a vague problem, sparse data,
-                and a tight deadline, and I'll find the path: the right baseline, the
-                scrappy pipeline, the eval that tells the truth. I care about systems
-                that stay reliable long after the demo.
+                I work closely with stakeholders, non-technical domain experts, and 
+                people from different disciplines, translating between what's technically 
+                possible and what actually needs to ship. As a builder, I think in terms 
+                of where things are headed, not just where they are now, and I plan my 
+                approach accordingly.
               </p>
             </div>
           </div>
