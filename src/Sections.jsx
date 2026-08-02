@@ -106,9 +106,7 @@ export function About() {
               <p>
                 I work closely with stakeholders, non-technical domain experts, and 
                 people from different disciplines, translating between what's technically 
-                possible and what actually needs to ship. As a builder, I think in terms 
-                of where things are headed, not just where they are now, and I plan my 
-                approach accordingly.
+                possible and what actually needs to ship.
               </p>
             </div>
           </div>

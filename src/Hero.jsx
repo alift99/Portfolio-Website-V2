@@ -34,8 +34,7 @@ export function Hero() {
             <div className="reveal in">
               <p className="hero-lede">
                 I build <b>intelligent systems that ship</b> — from computer-vision 
-                pipelines to generative-AI products that hold up in production. 
-                Equal parts researcher and engineer.
+                pipelines to generative-AI products that hold up in production.
               </p>
               <div style={{ marginTop: 26 }}><HeroActions /></div>
             </div>
