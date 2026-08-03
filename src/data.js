@@ -166,7 +166,7 @@ export const EXPERIENCE = [
     when: "Jul 2024 — Present",
     now: true,
     role: "AI Engineer",
-    org: "SAA Architects Pte Ltd",
+    org: "Surbana Jurong (SJ Group)",
     desc: "Developing computational and generative AI tools to streamline and enhance the architectural design process.",
     stack: ["Generative AI", "LLMs", "Python", "Computational Design"],
   },
