@@ -13,7 +13,8 @@ export const PROJECTS = [
       { src: "images/LitGraph Chat.png", kind: "img", label: "Chat interface" },
       { src: "images/LitGraph Graph.png", kind: "img", label: "Paper graph" },
     ],
-    links: [],
+    github: "",
+    demo: "",
   },
   {
     id: "beetlebot",
@@ -25,7 +26,8 @@ export const PROJECTS = [
     images: [
       { src: "images/BeetleBot_Final.gif", kind: "gif", label: "BeetleBot demo" },
     ],
-    links: [],
+    github: "",
+    demo: "",
   },
   {
     id: "multimodal-hate-meme",
@@ -37,7 +39,8 @@ export const PROJECTS = [
     images: [
       { src: "images/multimodal_multilingual_hate_meme_classification.avif", kind: "img", label: "Project overview" },
     ],
-    links: [],
+    github: "",
+    demo: "",
   },
   {
     id: "sauvc",
@@ -49,7 +52,8 @@ export const PROJECTS = [
     images: [
       { src: "images/sauvc_img (1).jpg", kind: "img", label: "AUV competition" },
     ],
-    links: [],
+    github: "",
+    demo: "",
   },
   {
     id: "chest-xray",
@@ -61,7 +65,8 @@ export const PROJECTS = [
     images: [
       { src: "images/ChestX-ray14-0000001144-46559e6f_9iVbS0m.jpg", kind: "img", label: "Chest X-ray sample" },
     ],
-    links: [],
+    github: "",
+    demo: "",
   },
   {
     id: "munchmatch",
@@ -73,7 +78,8 @@ export const PROJECTS = [
     images: [
       { src: "images/MunchMatch.png", kind: "img", label: "MunchMatch interface" },
     ],
-    links: [],
+    github: "",
+    demo: "",
   },
   {
     id: "amex-default",
@@ -85,7 +91,8 @@ export const PROJECTS = [
     images: [
       { src: "images/AMEX_proj.png", kind: "img", label: "Competition result" },
     ],
-    links: [],
+    github: "",
+    demo: "",
   },
   {
     id: "ascenda-loyalty",
@@ -97,7 +104,8 @@ export const PROJECTS = [
     images: [
       { src: "images/ascendaloyaltywebappimg.png", kind: "img", label: "Booking platform" },
     ],
-    links: [],
+    github: "",
+    demo: "",
   },
   {
     id: "teachers-space",
@@ -109,7 +117,8 @@ export const PROJECTS = [
     images: [
       { src: "images/TeachersSpace_poster_cropped.png", kind: "img", label: "App poster" },
     ],
-    links: [],
+    github: "",
+    demo: "",
   },
   {
     id: "hate-speech",
@@ -121,7 +130,8 @@ export const PROJECTS = [
     images: [
       { src: "images/ML_course_proj.png", label: "Results", kind: "img" },
     ],
-    links: [],
+    github: "",
+    demo: "",
   },
   {
     id: "asphalt-ai",
@@ -133,7 +143,8 @@ export const PROJECTS = [
     images: [
       { src: "https://www.youtube.com/embed/AB9uvA5YGME", kind: "youtube", label: "Gameplay demo" },
     ],
-    links: [],
+    github: "",
+    demo: "",
   },
   {
     id: "drone-simulation",
@@ -145,7 +156,8 @@ export const PROJECTS = [
     images: [
       { src: "images/bandicam 2021-05-04 05-53-38-040.mp4", kind: "video", label: "Simulation demo" },
     ],
-    links: [],
+    github: "https://github.com/alift99/Drone-Simulation",
+    demo: "",
   },
   {
     id: "pacman",
@@ -157,7 +169,8 @@ export const PROJECTS = [
     images: [
       { src: "https://www.youtube.com/embed/yOGLnUkVTP0", kind: "youtube", label: "Gameplay demo" },
     ],
-    links: [],
+    github: "",
+    demo: "",
   },
 ];
 

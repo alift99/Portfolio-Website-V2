@@ -137,6 +137,11 @@ function Carousel({ images, motion }) {
 }
 
 function ProjectCard({ p, motion }) {
+  const links = [
+    p.github && { label: "GitHub", href: p.github },
+    p.demo && { label: "Demo", href: p.demo },
+  ].filter(Boolean);
+
   return (
     <article className="card entering">
       <Carousel images={p.images} motion={motion} />
@@ -152,9 +157,9 @@ function ProjectCard({ p, motion }) {
         <div className="card-tags">
           {p.tags.map((t) => <span className="tag" key={t}>{t}</span>)}
         </div>
-        {p.links && p.links.length > 0 && (
+        {links.length > 0 && (
           <div className="card-links">
-            {p.links.map((l) => (
+            {links.map((l) => (
               <a className="card-link" href={l.href} key={l.label}>
                 {l.label} <span aria-hidden="true">↗</span>
               </a>

@@ -79,7 +79,7 @@ export function About() {
   const facts = [
     { k: "Based in", v: <b>Singapore · Remote</b> },
     { k: "Focus", v: "Full stack · GenAI · Data Science" },
-    { k: "Currently", v: "Cloud Architecture" },
+    { k: "Currently exploring", v: "AI Systems & Infrastructure" },
     { k: "Off-screen", v: "Competitive Powerlifting / Streetlifting" }
   ];
   return (
@@ -183,7 +183,6 @@ export function Skills() {
 const SOCIALS = [
   { label: "GitHub ↗", href: "https://github.com/alift99" },
   { label: "LinkedIn ↗", href: "https://www.linkedin.com/in/alifdaffa" },
-  { label: "Google Scholar ↗", href: "#" },
   { label: "Résumé (PDF) ↓", href: "#" },
 ];
 
