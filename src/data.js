@@ -2,6 +2,19 @@ export const CATEGORIES = ["Computer Vision", "Natural Language Processing", "Da
 
 export const PROJECTS = [
   {
+    id: "carecompass",
+    title: "CareCompass",
+    categories: ["Generative AI", "Full-stack"],
+    year: "2026",
+    desc: "Contributor to a free AI-powered platform helping caregivers in Singapore find care services and subsidies, live in production with an active user base. Migrated the chat backend from OpenAI's Threads API to the Conversations API.",
+    tags: ["LLM", "OpenAI API", "Backend"],
+    images: [
+      { src: "images/carecompass_screenshot.png", kind: "img", label: "CareCompass" },
+    ],
+    github: "https://github.com/carecompassbfg-cell/carecompass",
+    demo: "https://www.carecompass.sg/",
+  },
+  {
     id: "litgraph",
     title: "LitGraph",
     categories: ["Generative AI", "Full-stack"],
